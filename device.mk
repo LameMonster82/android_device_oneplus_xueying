@@ -17,6 +17,13 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2484
 TARGET_SCREEN_WIDTH := 1116
 
+# IR
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.consumerir.xml
+
+PRODUCT_PACKAGES += \
+    android.hardware.ir-service.oplus
+
 # LiveDisplay
 $(call soong_config_set,OPLUS_LINEAGE_LIVEDISPLAY_HAL,ENABLE_AF,true)
 
