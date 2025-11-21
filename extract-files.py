@@ -45,7 +45,7 @@ blob_fixups: blob_fixups_user_type = {
     'odm/etc/init/init.odm.camera.provider.override.rc': blob_fixup()
         .regex_replace('.*interface vendor.zeku.hardware.explorer@1.0::IMmsProvider mms/explorer.*\n', ''),
     'odm/lib64/libAlgoProcess.so': blob_fixup()
-        .replace_needed('android.hardware.graphics.common-V3-ndk.so', 'android.hardware.graphics.common-V6-ndk.so'),
+        .replace_needed('android.hardware.graphics.common-V3-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     (
         'odm/lib64/libCOppLceTonemapAPI.so',
         'odm/lib64/libSuperRaw.so',
