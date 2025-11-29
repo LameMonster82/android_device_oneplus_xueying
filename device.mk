@@ -35,9 +35,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.ir-service.oplus
 
-# LiveDisplay
-$(call soong_config_set,OPLUS_LINEAGE_LIVEDISPLAY_HAL,ENABLE_AF,true)
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
