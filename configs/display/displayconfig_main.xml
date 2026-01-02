@@ -1,0 +1,14 @@
+<displayConfiguration>
+    <name>Inner Display</name>
+
+    <autoBrightness enabled="true">
+    </autoBrightness>
+
+    <densityMapping>
+        <density>
+            <height>2440</height>
+            <width>2268</width>
+            <density>520</density>
+        </density>
+    </densityMapping>
+</displayConfiguration>

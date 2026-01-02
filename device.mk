@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021-2025 The LineageOS Project
+# Copyright (C) 2021-2026 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -16,6 +16,17 @@ PRODUCT_COPY_FILES += \
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2484
 TARGET_SCREEN_WIDTH := 1116
+
+# Device state
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/devicestate/device_state_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/devicestate/device_state_configuration.xml \
+
+# Display
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/display/displayconfig_main.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946704981769859.xml \
+    $(LOCAL_PATH)/configs/display/displayconfig_main.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946717172870531.xml \
+    $(LOCAL_PATH)/configs/display/displayconfig_sub.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946316123810436.xml \
+    $(LOCAL_PATH)/configs/display/display_layout_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_layout_configuration.xml
 
 # IR
 PRODUCT_COPY_FILES += \

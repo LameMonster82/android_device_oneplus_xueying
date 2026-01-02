@@ -9,6 +9,21 @@
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
     <bool name="config_automatic_brightness_available">true</bool>
 
+    <!-- The device states (supplied by DeviceStateManager) that should be treated as folded by the
+         display fold controller. Default is empty. -->
+    <integer-array name="config_foldedDeviceStates">
+        <item>0</item>
+        <item>1</item>
+        <item>100</item>
+        <item>102</item>
+    </integer-array>
+
+    <!-- When a device enters any of these states, it should be woken up. States are defined in
+         device_state_configuration.xml. -->
+    <integer-array name="config_deviceStatesOnWhichToWakeUp">
+        <item>3</item>
+    </integer-array>
+
     <!-- Array of hysteresis constraint values for brightening, represented as tenths of a
          percent. The length of this array is assumed to be one greater than
          config_ambientThresholdLevels. The brightening threshold is calculated as
@@ -390,6 +405,14 @@
          -->
     <string translatable="false" name="config_mainBuiltInDisplayCutout">M 1008,0 L 1008,126 L 1134,126 L 1134,0 Z</string>
 
+    <!-- Map of System DeviceState supplied by DeviceStateManager to WM Jetpack posture. Must be in
+         the format [System DeviceState]:[WM Jetpack Posture], for example: "0:1". -->
+    <string-array name="config_device_state_postures" translatable="false">
+        <item>0:1</item>
+        <item>2:2</item>
+        <item>3:3</item>
+    </string-array>
+
     <!-- The display cutout configs for secondary built-in display. -->
     <string name="config_secondaryBuiltInDisplayCutout" translatable="false">M -37,0 L -37,126 L 37,126 L 37,0 Z</string>
 
@@ -436,6 +459,17 @@
         <item>@string/config_mainBuiltInDisplayCutout</item>
         <item>@string/config_mainBuiltInDisplayCutout</item>
         <item>@string/config_secondaryBuiltInDisplayCutout</item>
+    </string-array>
+
+    <!-- List of the labels of requestable device state config values -->
+    <string-array name="config_deviceStatesAvailableForAppRequests">
+        <item>devicestate_closed</item>
+        <item>devicestate_tent</item>
+        <item>devicestate_half_opened</item>
+        <item>devicestate_opened</item>
+        <item>devicestate_all</item>
+        <item>devicestate_all2</item>
+        <item>devicestate_sub_default</item>
     </string-array>
 
 </resources>
