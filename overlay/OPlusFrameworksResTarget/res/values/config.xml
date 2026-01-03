@@ -391,6 +391,16 @@
     <!-- Light sensor event rate in milliseconds for automatic brightness control. -->
     <integer name="config_autoBrightnessLightSensorRate">200</integer>
 
+    <!-- Whether the system enables per-display focus. If the system has the input method for each
+         display, this value should be true. -->
+    <bool name="config_perDisplayFocusEnabled">true</bool>
+
+    <!-- Limit of how long the device can remain unlocked due to attention checking.  -->
+    <integer name="config_attentionMaximumExtension">12000000</integer>
+
+    <!-- The amount to scale fullscreen snapshots for Overview and snapshot starting windows. -->
+    <item name="config_highResTaskSnapshotScale" format="float" type="dimen">0.7</item>
+
     <!-- The bounding path of the cutout region of the main built-in display.
          Must either be empty if there is no cutout region, or a string that is parsable by
          {@link android.util.PathParser}.

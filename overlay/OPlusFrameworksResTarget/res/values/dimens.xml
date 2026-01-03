@@ -22,4 +22,7 @@
     <!-- Default radius of the software rounded corners. -->
     <dimen name="rounded_corner_radius">20.0dip</dimen>
 
+    <!-- The default minimal size of a resizable task, in both dimensions. -->
+    <dimen name="default_minimal_size_resizable_task">50.0dip</dimen>
+
 </resources>
