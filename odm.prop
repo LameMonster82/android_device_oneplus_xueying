@@ -4,3 +4,6 @@ ro.vendor.oplus.radio.esim.feature=2
 # Regional properties
 ro.product.property_source_order=odm,vendor,product,system_ext,system
 import /odm/etc/${ro.boot.prjname}/build.default.prop
+
+# Secure Element
+ro.oplus.normal_boot_mode=true
