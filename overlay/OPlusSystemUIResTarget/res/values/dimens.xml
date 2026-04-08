@@ -7,7 +7,14 @@
     <!-- the padding on the start of the statusbar -->
     <dimen name="status_bar_padding_start">20dp</dimen>
 
+    <!-- Camera 1 is the front camera -->
+    <string translatable="false" name="config_protectedCameraId">1</string>
+
     <!-- Location on the screen of the center of the physical power button. This is a reasonable
     default that should be overridden by device-specific overlays. -->
-    <dimen name="physical_power_button_center_screen_location_y">1000px</dimen>
+    <dimen name="physical_power_button_center_screen_location_y">923px</dimen>
+
+    <!-- Location on the screen of the center of the physical volume up/down buttons. -->
+    <dimen name="physical_volume_up_button_center_screen_location_y">303px</dimen>
+    <dimen name="physical_volume_down_button_center_screen_location_y">512px</dimen>
 </resources>

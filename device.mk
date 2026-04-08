@@ -23,7 +23,7 @@ PRODUCT_COPY_FILES += \
 
 # Display
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/display/displayconfig_main.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946717172870531.xml \
+    $(LOCAL_PATH)/configs/display/displayconfig_main.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946704981769859.xml \
     $(LOCAL_PATH)/configs/display/displayconfig_sub.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946316123810436.xml \
     $(LOCAL_PATH)/configs/display/display_layout_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_layout_configuration.xml
 
@@ -43,7 +43,8 @@ PRODUCT_PACKAGES += \
     OPlusFrameworksResTarget \
     OPlusSettingsProviderResTarget \
     OPlusSettingsResTarget \
-    OPlusSystemUIResTarget
+    OPlusSystemUIResTarget \
+    KeyHandlerResTarget
 
 # Power
 $(call soong_config_set,qtipower,tap_to_wake_node,/proc/touchpanel/double_tap_enable)
@@ -83,3 +84,10 @@ $(call inherit-product, device/oneplus/sm8550-common/common.mk)
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/xueying/xueying-vendor.mk)
+
+# Enable Window Managment 
+# https://source.android.com/docs/core/display/windowmanager-extensions#extensions_module_distribution
+$(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
+
+# Inherit GAPPS
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)

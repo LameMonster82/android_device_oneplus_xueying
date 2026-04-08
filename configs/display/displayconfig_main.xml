@@ -1,6 +1,34 @@
 <displayConfiguration>
     <name>Inner Display</name>
 
+    <screenBrightnessMap>
+        <!-- Ultra low (matches your 0–10 region) -->
+        <point><value>0.0</value><nits>0</nits></point>
+        <point><value>0.001</value><nits>1</nits></point>
+        <point><value>0.002</value><nits>1.5</nits></point>
+        <point><value>0.003</value><nits>2</nits></point>
+    
+        <!-- Low brightness (flattened region in your table) -->
+        <point><value>0.01</value><nits>3</nits></point>
+        <point><value>0.03</value><nits>6</nits></point>
+    
+        <!-- Indoor range -->
+        <point><value>0.08</value><nits>20</nits></point>
+        <point><value>0.15</value><nits>60</nits></point>
+        <point><value>0.3</value><nits>150</nits></point>
+    
+        <!-- Bright indoor / outdoor -->
+        <point><value>0.5</value><nits>350</nits></point>
+        <point><value>0.7</value><nits>700</nits></point>
+    
+        <!-- High brightness -->
+        <point><value>0.85</value><nits>1000</nits></point>
+        <point><value>0.95</value><nits>1250</nits></point>
+    
+        <!-- Peak -->
+        <point><value>1.0</value><nits>1400</nits></point>
+    </screenBrightnessMap>
+
     <autoBrightness enabled="true">
     </autoBrightness>
 
@@ -8,7 +36,7 @@
         <density>
             <height>2440</height>
             <width>2268</width>
-            <density>520</density>
+            <density>560</density>
         </density>
     </densityMapping>
 </displayConfiguration>

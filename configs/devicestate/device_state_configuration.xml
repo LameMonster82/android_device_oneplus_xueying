@@ -1,14 +1,12 @@
 <device-state-config>
+
   <device-state>
     <identifier>0</identifier>
     <name>CLOSED</name>
-    <flags>
-      <flag>FLAG_CANCEL_OVERRIDE_REQUESTS</flag>
-    </flags>
     <properties>
-      <property>com.android.server.policy.PROPERTY_FOLDABLE_DISPLAY_CONFIGURATION_OUTER_PRIMARY</property>
-      <property>com.android.server.policy.PROPERTY_FOLDABLE_HARDWARE_CONFIGURATION_FOLD_IN_CLOSED</property>
       <property>com.android.server.policy.PROPERTY_POLICY_CANCEL_OVERRIDE_REQUESTS</property>
+      <property>com.android.server.policy.PROPERTY_FOLDABLE_HARDWARE_CONFIGURATION_FOLD_IN_CLOSED</property>
+      <property>com.android.server.policy.PROPERTY_FOLDABLE_DISPLAY_CONFIGURATION_OUTER_PRIMARY</property>
       <property>com.android.server.policy.PROPERTY_POWER_CONFIGURATION_TRIGGER_SLEEP</property>
     </properties>
     <conditions>
@@ -22,63 +20,13 @@
         </sensor>
     </conditions>
   </device-state>
+
   <device-state>
     <identifier>1</identifier>
-    <name>TENT</name>
-    <properties>
-      <property>com.android.server.policy.PROPERTY_POLICY_AVAILABLE_FOR_APP_REQUEST</property>
-    </properties>
-    <conditions>
-        <sensor>
-            <type>qti.sensor.hinge_detect</type>
-            <name>hinge_detect hinge detect Non-wakeup</name>
-            <value>
-              <min>0</min>
-              <max>120</max>
-            </value>
-            <value>
-              <min-inclusive>3</min-inclusive>
-              <max-inclusive>3</max-inclusive>
-            </value>
-        </sensor>
-        <sensor>
-            <type>qti.sensor.fold_state</type>
-            <name>hinge_detect fold state Wakeup</name>
-            <value>
-              <min>-0.5</min>
-              <max>0.5</max>
-            </value>
-        </sensor>
-        <sensor>
-            <type>android.sensor.gravity</type>
-            <name>gravity  Non-wakeup</name>
-            <value>
-              <min>-11</min>
-              <max>-5.5</max>
-            </value>
-            <value>
-              <min>-3</min>
-              <max>3</max>
-            </value>
-            <value>
-              <min>-8</min>
-              <max>1</max>
-            </value>
-        </sensor>
-        <keyguard>
-          <show>false</show>
-        </keyguard>
-        <camera>
-          <open>false</open>
-        </camera>
-    </conditions>
-  </device-state>
-  <device-state>
-    <identifier>2</identifier>
     <name>HALF_OPENED</name>
     <properties>
-      <property>com.android.server.policy.PROPERTY_FOLDABLE_DISPLAY_CONFIGURATION_INNER_PRIMARY</property>
       <property>com.android.server.policy.PROPERTY_FOLDABLE_HARDWARE_CONFIGURATION_FOLD_IN_HALF_OPEN</property>
+      <property>com.android.server.policy.PROPERTY_FOLDABLE_DISPLAY_CONFIGURATION_INNER_PRIMARY</property>
       <property>com.android.server.policy.PROPERTY_POWER_CONFIGURATION_TRIGGER_WAKE</property>
     </properties>
     <conditions>
@@ -103,12 +51,13 @@
         </keyguard>
     </conditions>
   </device-state>
+
   <device-state>
-    <identifier>3</identifier>
+    <identifier>2</identifier>
     <name>OPENED</name>
     <properties>
-      <property>com.android.server.policy.PROPERTY_FOLDABLE_DISPLAY_CONFIGURATION_INNER_PRIMARY</property>
       <property>com.android.server.policy.PROPERTY_FOLDABLE_HARDWARE_CONFIGURATION_FOLD_IN_OPEN</property>
+      <property>com.android.server.policy.PROPERTY_FOLDABLE_DISPLAY_CONFIGURATION_INNER_PRIMARY</property>
       <property>com.android.server.policy.PROPERTY_POWER_CONFIGURATION_TRIGGER_WAKE</property>
     </properties>
     <conditions>
@@ -121,5 +70,20 @@
             </value>
         </sensor>
     </conditions>
+  </device-state>
+
+  <device-state>
+    <identifier>3</identifier>
+    <name>REAR_DISPLAY_MODE</name>
+    <properties>
+      <property>com.android.server.policy.PROPERTY_EMULATED_ONLY</property>
+      <property>com.android.server.policy.PROPERTY_FOLDABLE_DISPLAY_CONFIGURATION_OUTER_PRIMARY</property>
+      <property>com.android.server.policy.PROPERTY_POLICY_AVAILABLE_FOR_APP_REQUEST</property>
+      <property>com.android.server.policy.PROPERTY_FEATURE_REAR_DISPLAY</property>
+    </properties>
+
+    <flags>
+      <flag>FLAG_EMULATED_ONLY</flag>
+    </flags>
   </device-state>
 </device-state-config>

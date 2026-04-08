@@ -23,4 +23,8 @@
 
     <!-- The default minimal size of a resizable task, in both dimensions. -->
     <dimen name="default_minimal_size_resizable_task">50.0dip</dimen>
+
+    <dimen name="taskbar_frame_height">56dp</dimen>
+
+    <bool name="config_persistBrightnessNitsForDefaultDisplay">true</bool>
 </resources>

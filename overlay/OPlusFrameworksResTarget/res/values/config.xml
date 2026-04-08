@@ -9,35 +9,100 @@
     <bool name="config_automatic_brightness_available">true</bool>
 
     <!-- The device states (supplied by DeviceStateManager) that should be treated as open by the
-         device fold controller. Default is empty. -->
-    <integer-array name="config_openDeviceStates">
-        <item>3</item>
+         display fold controller. -->
+    <integer-array name="config_openDeviceStates" translatable="false">
+      <item>2</item> <!-- OPEN -->
     </integer-array>
 
     <!-- The device states (supplied by DeviceStateManager) that should be treated as folded by the
-         display fold controller. Default is empty. -->
-    <integer-array name="config_foldedDeviceStates">
-        <item>0</item>
-        <item>1</item>
+         display fold controller. This also controls the folded bit in CameraServiceProxy. -->
+    <integer-array name="config_foldedDeviceStates" translatable="false">
+      <item>0</item> <!-- CLOSED -->
     </integer-array>
 
-    <!-- The device states (supplied by DeviceStateManager) that should be treated as half-folded by
-     the display fold controller. Default is empty. -->
-    <integer-array name="config_halfFoldedDeviceStates">
-        <item>2</item>
+    <!-- The device states (supplied by DeviceStateManager) that should be treated as half folded by
+         the display fold controller. This also controls the folded bit in CameraServiceProxy. -->
+    <integer-array name="config_halfFoldedDeviceStates" translatable="false">
+      <item>1</item> <!-- HALF_OPENED -->
+    </integer-array>
+
+    <!-- The device states (supplied by DeviceStateManager) that should be treated as a rear display
+         state. Default is empty. -->
+    <integer-array name="config_rearDisplayDeviceStates" translatable="false">
+      <item>3</item> <!-- REAR_DISPLAY_STATE -->
+    </integer-array>
+
+    <!-- The device states (supplied by DeviceStateManager) that should be treated as concurrent
+     display state. Default is empty. -->
+    <integer-array name="config_concurrentDisplayDeviceStates" translatable="false">
+        <item>4</item> <!-- CONCURRENT_DISPLAY_STATE -->
     </integer-array>
 
     <!-- When a device enters any of these states, it should be woken up. States are defined in
          device_state_configuration.xml. -->
     <integer-array name="config_deviceStatesOnWhichToWakeUp">
-        <item>3</item>
+        <item>1</item> <!-- HALF_OPENED -->
+        <item>2</item> <!-- OPENED -->
     </integer-array>
 
     <!-- When a device enters any of these states, it should go to sleep. States are defined in
          device_state_configuration.xml. -->
     <integer-array name="config_deviceStatesOnWhichToSleep">
-        <item>0</item>
+        <item>0</item> <!-- CLOSED -->
     </integer-array>
+
+    <string-array name="config_deviceStatesAvailableForAppRequests">
+        <item>config_deviceStateRearDisplay</item>
+        <item>config_deviceStateConcurrentRearDisplay</item>
+    </string-array>
+
+    <!-- Indicates whether to enable an animation when unfolding a device or not -->
+    <bool name="config_unfoldTransitionEnabled">true</bool>
+    <!-- Indicates whether to enable hinge angle sensor when using unfold animation -->
+    <bool name="config_unfoldTransitionHingeAngle">true</bool>
+    <!-- Controls whether the device support multi window modes like split-screen. -->
+    <bool name="config_supportsMultiWindow">true</bool>
+    <!-- Controls whether device supports split-screen mode. -->
+    <bool name="config_supportsSplitScreenMultiWindow">true</bool>
+    <!-- Whether to show Fold lock behavior setting feature in Settings App -->
+    <bool name="config_fold_lock_behavior">true</bool>
+
+    <!-- Jetpack WindowManager display features -->
+    <string name="config_display_features" translatable="false">fold-[1134,0,1134,2268]</string>
+
+    <!-- Device state that corresponds to rear display mode, feature provided
+         through Jetpack WindowManager -->
+    <integer name="config_deviceStateRearDisplay">3</integer>
+
+    <integer name="config_deviceStateConcurrentRearDisplay">4</integer>
+
+    <string name="config_rearDisplayPhysicalAddress">4630946316123810436</string>
+
+    <!-- Boolean indicating whether secondary built-in displays should have their orientation
+         match the active default display. This config assumes that the secondary display only
+         requires swapping ROTATION_90 and ROTATION_270. -->
+    <bool name="config_matchSecondaryInternalDisplaysOrientationToReverseDefaultDisplay">true</bool>
+
+    <!-- Whether using display aspect ratio as a default aspect ratio for all letterboxed apps. -->
+    <bool name="config_letterboxIsDisplayAspectRatioForFixedOrientationLetterboxEnabled">true</bool>
+
+    <!-- Which Surface rotations are considered as tabletop posture (horizontal hinge) when the
+         device is half-folded. Other half-folded postures will be assumed to be book (vertical
+         hinge) mode. Units: degrees; valid values: 0, 90, 180, 270. -->
+    <integer-array name="config_deviceTabletopRotations">
+        <item>90</item><!-- Surface.ROTATION_180 -->
+        <item>270</item><!-- Surface.ROTATION_360 -->
+    </integer-array>
+
+    <!-- Whether to enable left-right split in portrait on this device -->
+    <bool name="config_leftRightSplitInPortrait">true</bool>
+
+     <!-- Whether to override disabled auto-rotate for half-folded states. -->
+    <bool name="config_windowManagerHalfFoldAutoRotateOverride" translatable="false">false</bool>
+
+    <!-- Indicates whether the window manager pauses autorotation when folding or unfolding
+     a foldable device based on hinge angle sensor events and physical display switch events. -->
+    <bool name="config_windowManagerPauseRotationWhenUnfolding">true</bool>
 
     <!-- Indicates that the device supports having more than one internal display on at the same
          time. Only applicable to devices with more than one internal display. If this option is
@@ -72,7 +137,7 @@
         <item>0</item> <!-- COLOR_MODE_DEFAULT -->
         <item>0</item> <!-- COLOR_MODE_DEFAULT -->
         <item>0</item> <!-- COLOR_MODE_DEFAULT -->
-     </integer-array>
+    </integer-array>
 
     <!-- Minimum screen brightness setting allowed by power manager.
          -2 is invalid so setting will resort to int value specified above.
@@ -469,9 +534,24 @@
     <!-- Map of System DeviceState supplied by DeviceStateManager to WM Jetpack posture. Must be in
          the format [System DeviceState]:[WM Jetpack Posture], for example: "0:1". -->
     <string-array name="config_device_state_postures" translatable="false">
-        <item>0:1</item>
-        <item>2:2</item>
-        <item>3:3</item>
+        <item>0:1</item>    <!-- CLOSED                     : STATE_FLAT -->
+        <item>1:2</item>    <!-- HALF_OPENED                : STATE_HALF_OPENED -->
+        <item>2:3</item>    <!-- OPENED                     : STATE_FLIPPED -->
+        <item>3:1</item>    <!-- REAR_DISPLAY               : STATE_FLAT -->
+        <item>4:1000</item> <!-- CONCURRENT                 : COMMON_STATE_USE_BASE_STATE -->
+    </string-array>
+
+    <!-- Map of DeviceState to rotation lock setting. Each entry must be in the format "key:value",
+         or "key:value:fallback_key" for example: "0:1" or "2:0:1". The keys are device states, and
+         the values are one of Settings.Secure.DeviceStateRotationLockSetting.
+         The fallback is a key to a device state that can be specified when the value is
+         Settings.Secure.DEVICE_STATE_ROTATION_LOCK_IGNORED.
+     -->
+    <string-array name="config_perDeviceStateRotationLockDefaults" translatable="false">
+        <item>0:1</item> <!-- CLOSED -> LOCKED -->
+        <item>1:0:2</item> <!-- HALF_OPENED -> IGNORED and fallback to device state OPENED -->
+        <item>2:2</item> <!-- OPENED -> UNLOCKED -->
+        <item>3:0:0</item> <!-- REAR_DISPLAY -> IGNORED and fallback to device state CLOSED -->
     </string-array>
 
     <!-- The display cutout configs for secondary built-in display. -->
@@ -502,7 +582,7 @@
          built-in related configs.
          -->
     <string-array name="config_displayUniqueIdArray" translatable="false">
-        <item>local:4630946717172870531</item>
+        <item>local:4630946704981769859</item>
         <item>local:4630946316123810436</item>
     </string-array>
 
@@ -518,4 +598,13 @@
         <item>@string/config_mainBuiltInDisplayCutout</item>
         <item>@string/config_secondaryBuiltInDisplayCutout</item>
     </string-array>
+
+    <!-- Maximum number of active tasks on a given Desktop Windowing session. Set to 0 for unlimited. -->
+    <integer name="config_maxDesktopWindowingActiveTasks">0</integer>
+
+    <!-- Desktop mode is supported on the current device  -->
+    <bool name="config_isDesktopModeSupported">true</bool>
+
+    <!-- True if the device supports system decorations on secondary displays. -->
+    <bool name="config_supportsSystemDecorsOnSecondaryDisplays">true</bool>
 </resources>
