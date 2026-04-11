@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_xueying.mk
+    $(LOCAL_DIR)/yaap_xueying.mk

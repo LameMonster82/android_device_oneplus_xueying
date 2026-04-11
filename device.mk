@@ -94,4 +94,4 @@ $(call inherit-product, vendor/oneplus/xueying/xueying-vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
 
 # Inherit GAPPS
-$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+#$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
