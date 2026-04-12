@@ -40,8 +40,6 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
-    'odm/etc/camera/CameraHWConfiguration.config': blob_fixup()
-        .regex_replace('SystemCamera =  0;  1;  0;  0;  1;  1; 0;  0;  0; 1', 'SystemCamera =  0;  0;  0;  0;  0;  0; 0;  0;  0; 0'),
     'odm/etc/init/hw/init.explorer.rc': blob_fixup()
         .regex_replace('.*copy_update_engine_log.*', ''),
     'odm/lib64/libAlgoProcess.so': blob_fixup()
