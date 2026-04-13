@@ -91,6 +91,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/self_ois.ocfg:$(TARGET_COPY_OUT_ODM)/etc/camera/self_ois.ocfg \
     $(LOCAL_PATH)/configs/camera/CameraHWConfiguration.config:$(TARGET_COPY_OUT_ODM)/etc/camera/CameraHWConfiguration.config
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=adb \
+    ro.adb.secure=0 \
+    ro.debuggable=1
+
 $(call soong_config_set_bool,OPLUS_LINEAGE_VIBRATOR_HAL,USE_EFFECT_STREAM,true)
 
 # Inherit from the common OEM chipset makefile.
@@ -104,4 +109,4 @@ $(call inherit-product, vendor/oneplus/xueying/xueying-vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
 
 # Inherit GAPPS
-$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+# $(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
