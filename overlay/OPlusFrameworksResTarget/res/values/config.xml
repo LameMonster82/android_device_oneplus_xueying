@@ -4,120 +4,120 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <!-- Flag indicating whether we should enable the automatic brightness.
+     <!-- Flag indicating whether we should enable the automatic brightness.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
-    <bool name="config_automatic_brightness_available">true</bool>
+     <bool name="config_automatic_brightness_available">true</bool>
 
-    <!-- The device states (supplied by DeviceStateManager) that should be treated as open by the
+     <!-- The device states (supplied by DeviceStateManager) that should be treated as open by the
          display fold controller. -->
-    <integer-array name="config_openDeviceStates" translatable="false">
-      <item>2</item> <!-- OPEN -->
-    </integer-array>
+     <integer-array name="config_openDeviceStates" translatable="false">
+          <item>2</item> <!-- OPEN -->
+     </integer-array>
 
-    <!-- The device states (supplied by DeviceStateManager) that should be treated as folded by the
+     <!-- The device states (supplied by DeviceStateManager) that should be treated as folded by the
          display fold controller. This also controls the folded bit in CameraServiceProxy. -->
-    <integer-array name="config_foldedDeviceStates" translatable="false">
-      <item>0</item> <!-- CLOSED -->
-    </integer-array>
+     <integer-array name="config_foldedDeviceStates" translatable="false">
+          <item>0</item> <!-- CLOSED -->
+     </integer-array>
 
     <!-- The device states (supplied by DeviceStateManager) that should be treated as half folded by
          the display fold controller. This also controls the folded bit in CameraServiceProxy. -->
-    <integer-array name="config_halfFoldedDeviceStates" translatable="false">
-      <item>1</item> <!-- HALF_OPENED -->
-    </integer-array>
+     <integer-array name="config_halfFoldedDeviceStates" translatable="false">
+          <item>1</item> <!-- HALF_OPENED -->
+     </integer-array>
 
     <!-- The device states (supplied by DeviceStateManager) that should be treated as a rear display
          state. Default is empty. -->
-    <integer-array name="config_rearDisplayDeviceStates" translatable="false">
-      <item>3</item> <!-- REAR_DISPLAY_STATE -->
-    </integer-array>
+     <integer-array name="config_rearDisplayDeviceStates" translatable="false">
+          <item>3</item> <!-- REAR_DISPLAY_STATE -->
+     </integer-array>
 
-    <!-- The device states (supplied by DeviceStateManager) that should be treated as concurrent
+     <!-- The device states (supplied by DeviceStateManager) that should be treated as concurrent
      display state. Default is empty. -->
-    <integer-array name="config_concurrentDisplayDeviceStates" translatable="false">
-        <item>4</item> <!-- CONCURRENT_DISPLAY_STATE -->
-    </integer-array>
+     <integer-array name="config_concurrentDisplayDeviceStates" translatable="false">
+          <item>4</item> <!-- CONCURRENT_DISPLAY_STATE -->
+     </integer-array>
 
-    <!-- When a device enters any of these states, it should be woken up. States are defined in
+     <!-- When a device enters any of these states, it should be woken up. States are defined in
          device_state_configuration.xml. -->
-    <integer-array name="config_deviceStatesOnWhichToWakeUp">
-        <item>1</item> <!-- HALF_OPENED -->
-        <item>2</item> <!-- OPENED -->
-    </integer-array>
+     <integer-array name="config_deviceStatesOnWhichToWakeUp">
+          <item>1</item> <!-- HALF_OPENED -->
+          <item>2</item> <!-- OPENED -->
+     </integer-array>
 
-    <!-- When a device enters any of these states, it should go to sleep. States are defined in
+     <!-- When a device enters any of these states, it should go to sleep. States are defined in
          device_state_configuration.xml. -->
-    <integer-array name="config_deviceStatesOnWhichToSleep">
-        <item>0</item> <!-- CLOSED -->
-    </integer-array>
+     <integer-array name="config_deviceStatesOnWhichToSleep">
+          <item>0</item> <!-- CLOSED -->
+     </integer-array>
 
-    <string-array name="config_deviceStatesAvailableForAppRequests">
-        <item>config_deviceStateRearDisplay</item>
-        <item>config_deviceStateConcurrentRearDisplay</item>
-    </string-array>
+     <string-array name="config_deviceStatesAvailableForAppRequests">
+          <item>config_deviceStateRearDisplay</item>
+          <item>config_deviceStateConcurrentRearDisplay</item>
+     </string-array>
 
-    <!-- Indicates whether to enable an animation when unfolding a device or not -->
-    <bool name="config_unfoldTransitionEnabled">true</bool>
-    <!-- Indicates whether to enable hinge angle sensor when using unfold animation -->
-    <bool name="config_unfoldTransitionHingeAngle">true</bool>
-    <!-- Controls whether the device support multi window modes like split-screen. -->
-    <bool name="config_supportsMultiWindow">true</bool>
-    <!-- Controls whether device supports split-screen mode. -->
-    <bool name="config_supportsSplitScreenMultiWindow">true</bool>
-    <!-- Whether to show Fold lock behavior setting feature in Settings App -->
-    <bool name="config_fold_lock_behavior">true</bool>
+     <!-- Indicates whether to enable an animation when unfolding a device or not -->
+     <bool name="config_unfoldTransitionEnabled">true</bool>
+     <!-- Indicates whether to enable hinge angle sensor when using unfold animation -->
+     <bool name="config_unfoldTransitionHingeAngle">true</bool>
+     <!-- Controls whether the device support multi window modes like split-screen. -->
+     <bool name="config_supportsMultiWindow">true</bool>
+     <!-- Controls whether device supports split-screen mode. -->
+     <bool name="config_supportsSplitScreenMultiWindow">true</bool>
+     <!-- Whether to show Fold lock behavior setting feature in Settings App -->
+     <bool name="config_fold_lock_behavior">true</bool>
 
-    <!-- Jetpack WindowManager display features -->
-    <string name="config_display_features" translatable="false">fold-[1134,0,1134,2268]</string>
+     <!-- Jetpack WindowManager display features -->
+     <string name="config_display_features" translatable="false">fold-[1134,0,1134,2268]</string>
 
-    <!-- Device state that corresponds to rear display mode, feature provided
+     <!-- Device state that corresponds to rear display mode, feature provided
          through Jetpack WindowManager -->
-    <integer name="config_deviceStateRearDisplay">3</integer>
+     <integer name="config_deviceStateRearDisplay">3</integer>
 
-    <integer name="config_deviceStateConcurrentRearDisplay">4</integer>
+     <integer name="config_deviceStateConcurrentRearDisplay">4</integer>
 
-    <string name="config_rearDisplayPhysicalAddress">4630946316123810436</string>
+     <string name="config_rearDisplayPhysicalAddress">4630946316123810436</string>
 
-    <!-- Boolean indicating whether secondary built-in displays should have their orientation
+     <!-- Boolean indicating whether secondary built-in displays should have their orientation
          match the active default display. This config assumes that the secondary display only
          requires swapping ROTATION_90 and ROTATION_270. -->
-    <bool name="config_matchSecondaryInternalDisplaysOrientationToReverseDefaultDisplay">true</bool>
+     <bool name="config_matchSecondaryInternalDisplaysOrientationToReverseDefaultDisplay">true</bool>
 
-    <!-- Whether using display aspect ratio as a default aspect ratio for all letterboxed apps. -->
-    <bool name="config_letterboxIsDisplayAspectRatioForFixedOrientationLetterboxEnabled">true</bool>
+     <!-- Whether using display aspect ratio as a default aspect ratio for all letterboxed apps. -->
+     <bool name="config_letterboxIsDisplayAspectRatioForFixedOrientationLetterboxEnabled">true</bool>
 
-    <!-- Which Surface rotations are considered as tabletop posture (horizontal hinge) when the
+     <!-- Which Surface rotations are considered as tabletop posture (horizontal hinge) when the
          device is half-folded. Other half-folded postures will be assumed to be book (vertical
          hinge) mode. Units: degrees; valid values: 0, 90, 180, 270. -->
-    <integer-array name="config_deviceTabletopRotations">
-        <item>90</item><!-- Surface.ROTATION_180 -->
-        <item>270</item><!-- Surface.ROTATION_360 -->
-    </integer-array>
+     <integer-array name="config_deviceTabletopRotations">
+          <item>90</item><!-- Surface.ROTATION_180 -->
+          <item>270</item><!-- Surface.ROTATION_360 -->
+     </integer-array>
 
-    <!-- Whether to enable left-right split in portrait on this device -->
-    <bool name="config_leftRightSplitInPortrait">true</bool>
+     <!-- Whether to enable left-right split in portrait on this device -->
+     <bool name="config_leftRightSplitInPortrait">true</bool>
 
      <!-- Whether to override disabled auto-rotate for half-folded states. -->
-    <bool name="config_windowManagerHalfFoldAutoRotateOverride" translatable="false">false</bool>
+     <bool name="config_windowManagerHalfFoldAutoRotateOverride" translatable="false">false</bool>
 
-    <!-- Indicates whether the window manager pauses autorotation when folding or unfolding
+     <!-- Indicates whether the window manager pauses autorotation when folding or unfolding
      a foldable device based on hinge angle sensor events and physical display switch events. -->
-    <bool name="config_windowManagerPauseRotationWhenUnfolding">true</bool>
+     <bool name="config_windowManagerPauseRotationWhenUnfolding">true</bool>
 
-    <!-- Indicates that the device supports having more than one internal display on at the same
+     <!-- Indicates that the device supports having more than one internal display on at the same
          time. Only applicable to devices with more than one internal display. If this option is
          set to false, DisplayManager will make additional effort to ensure no more than 1 internal
          display is powered on at the same time. -->
-    <bool name="config_supportsConcurrentInternalDisplays">false</bool>
+     <bool name="config_supportsConcurrentInternalDisplays">false</bool>
 
-    <!-- Indicate available ColorDisplayManager.COLOR_MODE_xxx. -->
-    <integer-array name="config_availableColorModes">
-        <item>0</item> <!-- COLOR_MODE_NATURAL   -->
-        <item>1</item> <!-- COLOR_MODE_BOOSTED   -->
-        <item>3</item> <!-- COLOR_MODE_AUTOMATIC -->
-    </integer-array>
+     <!-- Indicate available ColorDisplayManager.COLOR_MODE_xxx. -->
+     <integer-array name="config_availableColorModes">
+          <item>0</item> <!-- COLOR_MODE_NATURAL   -->
+          <item>1</item> <!-- COLOR_MODE_BOOSTED   -->
+          <item>3</item> <!-- COLOR_MODE_AUTOMATIC -->
+     </integer-array>
 
-    <!-- The following two arrays specify which color space to use for display composition when a
+     <!-- The following two arrays specify which color space to use for display composition when a
          certain color mode is active.
          Composition color spaces are defined in android.view.Display.COLOR_MODE_xxx, and color
          modes are defined in ColorDisplayManager.COLOR_MODE_xxx and
@@ -128,49 +128,49 @@
          the device for for display composition.
          If a color mode does not have a corresponding color space specified in this array, the
          currently set composition color space will not be modified.-->
-    <integer-array name="config_displayCompositionColorModes">
-        <item>0</item> <!-- COLOR_MODE_NATURAL   -->
-        <item>1</item> <!-- COLOR_MODE_BOOSTED   -->
-        <item>3</item> <!-- COLOR_MODE_AUTOMATIC -->
-    </integer-array>
-    <integer-array name="config_displayCompositionColorSpaces">
-        <item>0</item> <!-- COLOR_MODE_DEFAULT -->
-        <item>0</item> <!-- COLOR_MODE_DEFAULT -->
-        <item>0</item> <!-- COLOR_MODE_DEFAULT -->
-    </integer-array>
+     <integer-array name="config_displayCompositionColorModes">
+          <item>0</item> <!-- COLOR_MODE_NATURAL   -->
+          <item>1</item> <!-- COLOR_MODE_BOOSTED   -->
+          <item>3</item> <!-- COLOR_MODE_AUTOMATIC -->
+     </integer-array>
+     <integer-array name="config_displayCompositionColorSpaces">
+          <item>0</item> <!-- COLOR_MODE_DEFAULT -->
+          <item>0</item> <!-- COLOR_MODE_DEFAULT -->
+          <item>0</item> <!-- COLOR_MODE_DEFAULT -->
+     </integer-array>
 
-    <!-- Minimum screen brightness setting allowed by power manager.
+     <!-- Minimum screen brightness setting allowed by power manager.
          -2 is invalid so setting will resort to int value specified above.
          Set this to 0.0 to allow screen to go to minimal brightness.
          The user is forbidden from setting the brightness below this level. -->
-    <item type="dimen" name="config_screenBrightnessSettingMinimumFloat">0.001954079</item>
+     <item type="dimen" name="config_screenBrightnessSettingMinimumFloat">0.001954079</item>
 
-    <!-- Maximum screen brightness allowed by the power manager.
+     <!-- Maximum screen brightness allowed by the power manager.
          -2 is invalid so setting will resort to int value specified above.
          Set this to 1.0 for maximum brightness range.
          The user is forbidden from setting the brightness above this level. -->
-    <item type="dimen" name="config_screenBrightnessSettingMaximumFloat">1.0</item>
+     <item type="dimen" name="config_screenBrightnessSettingMaximumFloat">1.0</item>
 
-    <!-- Default screen brightness setting set.
+     <!-- Default screen brightness setting set.
          -2 is invalid so setting will resort to int value specified above.
          Must be in the range specified by minimum and maximum. -->
-    <item type="dimen" name="config_screenBrightnessSettingDefaultFloat">0.45882353</item>
+     <item type="dimen" name="config_screenBrightnessSettingDefaultFloat">0.75</item>
 
-    <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
+     <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
          for debouncing the light sensor.  Different constants are used to debounce the light sensor
          when adapting to brighter or darker environments.  This parameter controls how quickly
          brightness changes occur in response to an observed change in light level that exceeds the
          hysteresis threshold. -->
-    <integer name="config_autoBrightnessBrighteningLightDebounce">1500</integer>
-    <integer name="config_autoBrightnessDarkeningLightDebounce">1500</integer>
+     <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
+     <integer name="config_autoBrightnessDarkeningLightDebounce">1000</integer>
 
-    <!-- Light sensor event rate in milliseconds for automatic brightness control. -->
-    <integer name="config_autoBrightnessLightSensorRate">200</integer>
+     <!-- Light sensor event rate in milliseconds for automatic brightness control. -->
+     <integer name="config_autoBrightnessLightSensorRate">200</integer>
 
-    <!-- Screen brightness used to dim the screen when the user activity
+     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDim">6</integer>
+     <integer name="config_screenBrightnessDim">6</integer>
 
     <!-- Array of light sensor lux values to define our levels for auto backlight brightness support.
          The N entries of this array define N + 1 control points as follows:
@@ -192,55 +192,45 @@
          backlight values for lux levels between these control points.
 
          Must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessLevels">
-        <item>1</item>
-        <item>4</item>
-        <item>12</item>
-        <item>20</item>
-        <item>28</item>
-        <item>47</item>
-        <item>63</item>
-        <item>86</item>
-        <item>150</item>
-        <item>220</item>
-        <item>270</item>
-        <item>360</item>
-        <item>420</item>
-        <item>510</item>
-        <item>620</item>
-        <item>1000</item>
-        <item>2000</item>
-        <item>3100</item>
-        <item>3988</item>
-        <item>5018</item>
-        <item>6232</item>
-        <item>7648</item>
-        <item>9280</item>
-        <item>11146</item>
-        <item>13261</item>
-        <item>15640</item>
-        <item>18302</item>
-        <item>21260</item>
-        <item>24532</item>
-        <item>28133</item>
-        <item>32080</item>
-        <item>36388</item>
-        <item>41073</item>
-        <item>46153</item>
-        <item>51642</item>
-        <item>63912</item>
-        <item>78015</item>
-        <item>94076</item>
-        <item>112226</item>
-        <item>132592</item>
-        <item>155302</item>
-        <item>180486</item>
-        <item>208271</item>
-        <item>223180</item>
-        <item>255108</item>
-    </integer-array>
+     <integer-array name="config_autoBrightnessLevels">
+          <item>1</item>
+          <item>2</item>
+          <item>4</item>
+          <item>6</item>
+          <item>8</item>
+          <item>10</item>
+          <item>15</item>
+          <item>20</item>
+          <item>25</item>
+          <item>30</item>
+          <item>40</item>
+          <item>60</item>
+          <item>95</item>
+          <item>100</item>
+          <item>200</item>
+          <item>300</item>
+          <item>400</item>
+          <item>500</item>
+          <item>1000</item>
+          <item>1100</item>
+          <item>1200</item>
+          <item>1300</item>
+          <item>1400</item>
+          <item>1500</item>
+          <item>1600</item>
+          <item>1700</item>
+          <item>1800</item>
+          <item>1900</item>
+          <item>2000</item>
+          <item>4000</item>
+          <item>7000</item>
+          <item>10000</item>
+          <item>15000</item>
+          <item>30000</item>
+          <item>40000</item>
+     </integer-array>
 
-    <!-- Array of desired screen brightness in nits corresponding to the lux values
+     <!-- Array of desired screen brightness in nits corresponding to the lux values
          in the config_autoBrightnessLevels array. The display brightness is defined as the measured
          brightness of an all-white image.
 
@@ -252,260 +242,445 @@
          This array should have size one greater than the size of the config_autoBrightnessLevels
          array. The brightness values must be non-negative and non-decreasing. This must be
          overridden in platform specific overlays -->
-    <array name="config_autoBrightnessDisplayValuesNits">
-        <item>2.0487</item>
-        <item>4.8394</item>
-        <item>15.2619</item>
-        <item>33</item>
-        <item>49</item>
-        <item>62.95</item>
-        <item>76.46</item>
-        <item>84.38</item>
-        <item>89.51</item>
-        <item>100.34</item>
-        <item>109.48</item>
-        <item>115</item>
-        <item>123.86</item>
-        <item>129.18</item>
-        <item>138.07</item>
-        <item>148.62</item>
-        <item>175.84</item>
-        <item>234.9</item>
-        <item>279</item>
-        <item>300</item>
-        <item>320</item>
-        <item>340</item>
-        <item>360</item>
-        <item>380</item>
-        <item>400</item>
-        <item>420</item>
-        <item>440</item>
-        <item>460</item>
-        <item>480</item>
-        <item>500</item>
-        <item>520</item>
-        <item>540</item>
-        <item>560</item>
-        <item>580</item>
-        <item>600</item>
-        <item>620</item>
-        <item>660</item>
-        <item>700</item>
-        <item>740</item>
-        <item>780</item>
-        <item>820</item>
-        <item>860</item>
-        <item>900</item>
-        <item>940</item>
-        <item>960</item>
-        <item>1000</item>
-    </array>
+     <array name="config_autoBrightnessDisplayValuesNits">
+          <item>2.0000</item>
+          <item>2.8702</item>
+          <item>2.8780</item>
+          <item>2.8723</item>
+          <item>2.9084</item>
+          <item>3.1010</item>
+          <item>3.6425</item>
+          <item>5.0148</item>
+          <item>6.8366</item>
+          <item>12.2996</item>
+          <item>20.7523</item>
+          <item>31.2007</item>
+          <item>46.8328</item>
+          <item>67.1059</item>
+          <item>90.4051</item>
+          <item>89.5870</item>
+          <item>147.0060</item>
+          <item>205.8080</item>
+          <item>262.7860</item>
+          <item>358.1320</item>
+          <item>484.4660</item>
+          <item>504.4970</item>
+          <item>503.6610</item>
+          <item>506.5070</item>
+          <item>540.1750</item>
+          <item>547.3610</item>
+          <item>546.0600</item>
+          <item>550.4030</item>
+          <item>568.1410</item>
+          <item>567.0730</item>
+          <item>568.7910</item>
+          <item>578.0750</item>
+          <item>596.8780</item>
+          <item>595.6570</item>
+          <item>597.7150</item>
+          <item>596.7860</item>
+          <item>624.6490</item>
+          <item>639.4340</item>
+          <item>645.6450</item>
+          <item>644.5080</item>
+          <item>646.9150</item>
+          <item>645.4430</item>
+          <item>691.2450</item>
+          <item>696.6870</item>
+          <item>695.7080</item>
+          <item>697.2200</item>
+          <item>696.2660</item>
+          <item>715.9210</item>
+          <item>746.9360</item>
+          <item>745.6770</item>
+          <item>749.2220</item>
+          <item>747.5270</item>
+          <item>756.0950</item>
+          <item>754.9810</item>
+          <item>758.1820</item>
+          <item>805.2900</item>
+          <item>817.8000</item>
+          <item>860.3040</item>
+          <item>870.8000</item>
+          <item>884.9410</item>
+          <item>900.5680</item>
+          <item>959.7790</item>
+          <item>986.2320</item>
+          <item>1029.3100</item>
+          <item>1037.6000</item>
+          <item>1118.5200</item>
+          <item>1327.8500</item>
+          <item>1406.1100</item>
+     </array>
 
-    <!-- An array describing the screen's backlight values corresponding to the brightness
+     <!-- Screen brightness used to dim the screen when the user activity
+         timeout expires.  May be less than the minimum allowed brightness setting
+         that can be set by the user. -->
+     <item type="dimen" name="config_screenBrightnessDimFloat">0.00058599472</item>
+
+     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
+         May be less than the minimum allowed brightness setting
+         that can be set by the user. -->
+     <item type="dimen" name="config_screenBrightnessDozeFloat">0.00058599472</item>
+
+     <!-- The maximum range of gamma adjustment possible using the screen
+         auto-brightness adjustment setting. -->
+     <fraction name="config_autoBrightnessAdjustmentMaxGamma">100%</fraction>
+
+     <!-- Boolean indicating whether display white balance is supported. -->
+     <bool name="config_displayWhiteBalanceAvailable">true</bool>
+
+     <!-- See AmbientSensor.AmbientColorTemperatureSensor.
+         The ambient color temperature sensor name. -->
+     <string name="config_displayWhiteBalanceColorTemperatureSensorName">qti.sensor.rgb</string>
+
+     <!-- Minimum color temperature, in Kelvin, supported by display white balance. -->
+     <integer name="config_displayWhiteBalanceColorTemperatureMin">2500</integer>
+
+     <!-- Maximum color temperature, in Kelvin, supported by display white balance. -->
+     <integer name="config_displayWhiteBalanceColorTemperatureMax">8000</integer>
+
+     <!-- Default color temperature, in Kelvin, used by display white balance. -->
+     <integer name="config_displayWhiteBalanceColorTemperatureDefault">6400</integer>
+
+     <!-- See DisplayWhiteBalanceController.
+         A float array containing a list of ambient color temperatures, in Kelvin. This array,
+         together with config_displayWhiteBalanceDisplayColorTemperatures, is used to generate a
+         lookup table used in DisplayWhiteBalanceController. This lookup table is used to map
+         ambient color temperature readings to a target color temperature for the display.
+         This table is optional. If used, this array must,
+         1) Contain at least two entries
+         2) Be the same length as config_displayWhiteBalanceDisplayColorTemperatures. -->
+     <array name="config_displayWhiteBalanceAmbientColorTemperatures">
+          <item>2400</item>
+          <item>3000</item>
+          <item>3600</item>
+          <item>4100</item>
+          <item>4700</item>
+          <item>5200</item>
+          <item>5800</item>
+          <item>6300</item>
+          <item>6800</item>
+          <item>7300</item>
+          <item>7800</item>
+     </array>
+
+     <!-- See DisplayWhiteBalanceController.
+         An array containing a list of display color temperatures, in Kelvin. See
+         config_displayWhiteBalanceAmbientColorTemperatures for additional details.
+         The same restrictions apply to this array. -->
+     <array name="config_displayWhiteBalanceDisplayColorTemperatures">
+          <item>5250</item>
+          <item>5550</item>
+          <item>6000</item>
+          <item>6250</item>
+          <item>6450</item>
+          <item>6550</item>
+          <item>6750</item>
+          <item>6850</item>
+          <item>6950</item>
+          <item>7050</item>
+          <item>7200</item>
+     </array>
+
+     <!-- See DisplayWhiteBalanceController.
+         The same as config_displayWhiteBalanceAmbientColorTemperatures, but with a stronger
+         visual adjustment. -->
+     <array name="config_displayWhiteBalanceStrongAmbientColorTemperatures">
+          <item>3000</item>
+          <item>3500</item>
+          <item>4000</item>
+          <item>4500</item>
+          <item>5000</item>
+          <item>5500</item>
+          <item>6000</item>
+          <item>6500</item>
+          <item>7000</item>
+          <item>7500</item>
+          <item>8000</item>
+     </array>
+
+     <!-- See DisplayWhiteBalanceController.
+         The same as config_displayWhiteBalanceDisplayColorTemperatures, but with a stronger
+         visual adjustment. -->
+     <array name="config_displayWhiteBalanceStrongDisplayColorTemperatures">
+          <item>4000</item>
+          <item>4600</item>
+          <item>5400</item>
+          <item>6300</item>
+          <item>7200</item>
+          <item>7200</item>
+          <item>7200</item>
+          <item>7200</item>
+          <item>7200</item>
+          <item>7200</item>
+          <item>7200</item>
+     </array>
+
+     <!-- Range minimums corresponding to config_displayWhiteBalanceDisplaySteps. For example, if
+     the
+         range minimums are [0, 3000] and the steps are [10, 20] then between 0 and 3000, exclusive,
+         the step between them will be 10 (i.e. 0, 10, 20, etc.) and the step between 3000 and the
+         maximum value is 20 (i.e. 3000, 3020, 3040, etc.). -->
+     <integer-array name="config_displayWhiteBalanceDisplayRangeMinimums">
+          <item>0</item>
+     </integer-array>
+
+     <!-- Steps corresponding to config_displayWhiteBalanceDisplayRangeMinimums. For example, if the
+         range minimums are [0, 3000] and the steps are [10, 20] then between 0 and 3000, exclusive,
+         the step between them will be 10 (i.e. 0, 10, 20, etc.) and the step between 3000 and the
+         maximum value is 20 (i.e. 3000, 3020, 3040, etc.). -->
+     <integer-array name="config_displayWhiteBalanceDisplaySteps">
+          <item>40</item>
+     </integer-array>
+
+     <!-- An array describing the screen's backlight values corresponding to the brightness
          values in the config_screenBrightnessNits array.
 
          This array should be equal in size to config_screenBrightnessBacklight. -->
-    <integer-array name="config_screenBrightnessBacklight">
-        <item>0</item>
+     <integer-array name="config_screenBrightnessBacklight">
         <item>4</item>
         <item>8</item>
-        <item>12</item>
-        <item>16</item>
-        <item>20</item>
-        <item>24</item>
-        <item>28</item>
-        <item>32</item>
-        <item>36</item>
-        <item>40</item>
-        <item>44</item>
-        <item>48</item>
-        <item>52</item>
+        <item>11</item>
+        <item>15</item>
+        <item>19</item>
+        <item>23</item>
+        <item>26</item>
+        <item>30</item>
+        <item>34</item>
+        <item>38</item>
+        <item>41</item>
+        <item>45</item>
+        <item>49</item>
+        <item>53</item>
         <item>56</item>
         <item>60</item>
         <item>64</item>
         <item>68</item>
-        <item>72</item>
-        <item>76</item>
-        <item>80</item>
-        <item>84</item>
-        <item>88</item>
-        <item>92</item>
-        <item>96</item>
-        <item>100</item>
-        <item>104</item>
-        <item>108</item>
-        <item>112</item>
+        <item>71</item>
+        <item>75</item>
+        <item>79</item>
+        <item>83</item>
+        <item>86</item>
+        <item>90</item>
+        <item>94</item>
+        <item>98</item>
+        <item>101</item>
+        <item>105</item>
+        <item>109</item>
+        <item>113</item>
         <item>116</item>
         <item>120</item>
-        <item>123</item>
-        <item>127</item>
+        <item>124</item>
+        <item>128</item>
         <item>131</item>
         <item>135</item>
         <item>139</item>
         <item>143</item>
-        <item>147</item>
-        <item>151</item>
-        <item>155</item>
-        <item>159</item>
-        <item>163</item>
-        <item>167</item>
-        <item>171</item>
-        <item>175</item>
-        <item>179</item>
-        <item>183</item>
-        <item>187</item>
+        <item>146</item>
+        <item>150</item>
+        <item>154</item>
+        <item>158</item>
+        <item>161</item>
+        <item>165</item>
+        <item>169</item>
+        <item>173</item>
+        <item>176</item>
+        <item>180</item>
+        <item>184</item>
+        <item>188</item>
         <item>191</item>
         <item>195</item>
         <item>199</item>
         <item>203</item>
-        <item>207</item>
-        <item>211</item>
-        <item>215</item>
-        <item>219</item>
-        <item>223</item>
-        <item>227</item>
-        <item>231</item>
-        <item>235</item>
-        <item>239</item>
-        <item>243</item>
-        <item>246</item>
+        <item>206</item>
+        <item>210</item>
+        <item>214</item>
+        <item>218</item>
+        <item>221</item>
+        <item>225</item>
+        <item>229</item>
+        <item>233</item>
+        <item>236</item>
+        <item>240</item>
+        <item>244</item>
+        <item>248</item>
         <item>251</item>
         <item>255</item>
-    </integer-array>
+     </integer-array>
 
-    <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
+     <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
          values in the config_screenBrightnessBacklight array.  On OLED displays these  values
          should be measured with an all white image while the display is in the fully on state.
          Note that this value should *not* reflect the maximum brightness value for any high
          brightness modes but only the maximum brightness value obtainable in a sustainable manner.
 
          This array should be equal in size to config_screenBrightnessBacklight -->
-    <array name="config_screenBrightnessNits">
-        <item>0.0</item>
-        <item>2.87</item>
-        <item>2.92</item>
-        <item>3.1</item>
-        <item>3.57</item>
-        <item>4.25</item>
-        <item>5.17</item>
-        <item>6.25</item>
-        <item>7.46</item>
-        <item>9.01</item>
-        <item>10.72</item>
-        <item>12.79</item>
-        <item>14.79</item>
-        <item>17.25</item>
-        <item>20.09</item>
-        <item>22.73</item>
-        <item>25.75</item>
-        <item>29.04</item>
-        <item>32.47</item>
-        <item>36.59</item>
-        <item>40.5</item>
-        <item>44.76</item>
-        <item>49.59</item>
-        <item>54.28</item>
-        <item>58.76</item>
-        <item>63.89</item>
-        <item>69.43</item>
-        <item>75.25</item>
-        <item>81.14</item>
-        <item>87.62</item>
-        <item>94.04</item>
-        <item>98.43</item>
-        <item>105.66</item>
-        <item>113.0</item>
-        <item>121.22</item>
-        <item>129.54</item>
-        <item>136.8</item>
-        <item>146.37</item>
-        <item>154.61</item>
-        <item>163.9</item>
-        <item>174.21</item>
-        <item>182.27</item>
-        <item>194.45</item>
-        <item>205.89</item>
-        <item>215.12</item>
-        <item>228.27</item>
-        <item>238.21</item>
-        <item>250.34</item>
-        <item>263.42</item>
-        <item>273.78</item>
-        <item>287.67</item>
-        <item>300.67</item>
-        <item>313.06</item>
-        <item>327.17</item>
-        <item>340.72</item>
-        <item>354.25</item>
-        <item>368.99</item>
-        <item>383.17</item>
-        <item>398.86</item>
-        <item>415.52</item>
-        <item>431.63</item>
-        <item>448.22</item>
-        <item>459.04</item>
-        <item>482.52</item>
-        <item>498.77</item>
-    </array>
+     <array name="config_screenBrightnessNits">
+          <item>2.0000</item>
+          <item>2.8702</item>
+          <item>2.8780</item>
+          <item>2.8723</item>
+          <item>2.9084</item>
+          <item>3.1010</item>
+          <item>3.6425</item>
+          <item>5.0148</item>
+          <item>6.8366</item>
+          <item>12.2996</item>
+          <item>20.7523</item>
+          <item>31.2007</item>
+          <item>46.8328</item>
+          <item>67.1059</item>
+          <item>90.4051</item>
+          <item>89.5870</item>
+          <item>147.0060</item>
+          <item>205.8080</item>
+          <item>262.7860</item>
+          <item>358.1320</item>
+          <item>484.4660</item>
+          <item>504.4970</item>
+          <item>503.6610</item>
+          <item>506.5070</item>
+          <item>540.1750</item>
+          <item>547.3610</item>
+          <item>546.0600</item>
+          <item>550.4030</item>
+          <item>568.1410</item>
+          <item>567.0730</item>
+          <item>568.7910</item>
+          <item>578.0750</item>
+          <item>596.8780</item>
+          <item>595.6570</item>
+          <item>597.7150</item>
+          <item>596.7860</item>
+          <item>624.6490</item>
+          <item>639.4340</item>
+          <item>645.6450</item>
+          <item>644.5080</item>
+          <item>646.9150</item>
+          <item>645.4430</item>
+          <item>691.2450</item>
+          <item>696.6870</item>
+          <item>695.7080</item>
+          <item>697.2200</item>
+          <item>696.2660</item>
+          <item>715.9210</item>
+          <item>746.9360</item>
+          <item>745.6770</item>
+          <item>749.2220</item>
+          <item>747.5270</item>
+          <item>756.0950</item>
+          <item>754.9810</item>
+          <item>758.1820</item>
+          <item>805.2900</item>
+          <item>817.8000</item>
+          <item>860.3040</item>
+          <item>870.8000</item>
+          <item>884.9410</item>
+          <item>900.5680</item>
+          <item>959.7790</item>
+          <item>986.2320</item>
+          <item>1029.3100</item>
+          <item>1037.6000</item>
+          <item>1118.5200</item>
+          <item>1327.8500</item>
+          <item>1406.1100</item>
+     </array>
 
-    <!-- Array of ambient lux threshold values. This is used for determining hysteresis constraint
-         values by calculating the index to use for lookup and then setting the constraint value
-         to the corresponding value of the array. The new brightening hysteresis constraint value
-         is the n-th element of config_ambientBrighteningThresholds, and the new darkening
-         hysteresis constraint value is the n-th element of config_ambientDarkeningThresholds.
+     <!-- See DisplayWhiteBalanceThrottler.
+         The debounce time (in milliseconds) for increasing the screen color temperature, throttled
+         if time > lastTime + debounce. Must be non-negative. -->
+     <integer name="config_displayWhiteBalanceIncreaseDebounce">2000</integer>
 
-         The (zero-based) index is calculated as follows: (MAX is the largest index of the array)
-         condition                       calculated index
-         value < level[0]                0
-         level[n] <= value < level[n+1]  n+1
-         level[MAX] <= value             MAX+1 -->
-    <integer-array name="config_ambientThresholdLevels">
-        <item>10</item>
-    </integer-array>
+     <!-- See DisplayWhiteBalanceThrottler.
+         The debounce time (in milliseconds) for decreasing the screen color tempearture, throttled
+         if time < lastTime - debounce. Must be non-negative. -->
+     <integer name="config_displayWhiteBalanceDecreaseDebounce">3000</integer>
 
-    <!-- Array of hysteresis constraint values for brightening, represented as tenths of a
-         percent. The length of this array is assumed to be one greater than
-         config_ambientThresholdLevels. The brightening threshold is calculated as
-         lux * (1.0f + CONSTRAINT_VALUE). When the current lux is higher than this threshold,
-         the screen brightness is recalculated. See the config_ambientThresholdLevels
-         description for how the constraint value is chosen. -->
-    <integer-array name="config_ambientBrighteningThresholds">
-        <item>600</item>
-        <item>300</item>
-    </integer-array>
+     <!-- See DisplayWhiteBalanceThrottler.
+         The ambient color temperature values used to determine the threshold as the corresponding
+         value in config_displayWhiteBalance{Increase,Decrease}Threholds. Must be non-empty, the
+         same length as config_displayWhiteBalance{Increase,Decrease}Thresholds, and contain
+         non-negative, strictly increasing numbers.
 
-    <!-- Array of hysteresis constraint values for darkening, represented as tenths of a
-         percent. The length of this array is assumed to be one greater than
-         config_ambientThresholdLevels. The darkening threshold is calculated as
-         lux * (1.0f - CONSTRAINT_VALUE). When the current lux is lower than this threshold,
-         the screen brightness is recalculated. See the config_ambientThresholdLevels
-         description for how the constraint value is chosen. -->
-    <integer-array name="config_ambientDarkeningThresholds">
-        <item>600</item>
-        <item>300</item>
-    </integer-array>
+         For example, if:
 
-    <!-- Array of hysteresis constraint values for brightening, represented as tenths of a
-         percent. The length of this array is assumed to be one greater than
-         config_screenThresholdLevels. The brightening threshold is calculated as
-         screenBrightness * (1.0f + CONSTRAINT_VALUE). When the new screen brightness is higher
-         than this threshold, it is applied. See the config_screenThresholdLevels description for
-         how the constraint value is chosen. -->
-    <integer-array name="config_screenBrighteningThresholds">
-        <item>0</item>
-    </integer-array>
+         - baseThresolds = [0, 100, 1000];
+         - increaseThresholds = [0.1, 0.15, 0.2];
+         - decreaseThresholds = [0.1, 0.05, 0.0];
 
-    <!-- Whether the system enables per-display focus. If the system has the input method for each
+         Then, given the ambient color temperature INCREASED from X to Y (so X < Y):
+         - If 0 <= Y < 100, we require Y > (1 + 0.1) * X = 1.1X;
+         - If 100 <= Y < 1000, we require Y > (1 + 0.15) * X = 1.15X;
+         - If 1000 <= Y, we require Y > (1 + 0.2) * X = 1.2X.
+
+         Or, if the ambient color temperature DECREASED from X to Y (so X > Y):
+         - If 0 <= Y < 100, we require Y < (1 - 0.1) * X = 0.9X;
+         - If 100 <= Y < 1000, we require Y < (1 - 0.05) * X = 0.95X;
+         - If 1000 <= Y, we require Y < (1 - 0) * X = X. -->
+     <array name="config_displayWhiteBalanceBaseThresholds">
+          <item>6200</item>
+          <item>6300</item>
+          <item>6750</item>
+          <item>7350</item>
+     </array>
+
+     <!-- See DisplayWhiteBalanceThrottler.
+         The increase threshold values, throttled if value < value * (1 + threshold). Must be
+         non-empty, the same length as config_displayWhiteBalanceBaseThresholds, and contain
+         non-negative numbers. -->
+     <array name="config_displayWhiteBalanceIncreaseThresholds">
+          <item>0.0078740</item>
+          <item>0.0075472</item>
+          <item>0.0069930</item>
+          <item>0.0067114</item>
+     </array>
+
+     <!-- See DisplayWhiteBalanceThrottler.
+         The decrease threshold values, throttled if value > value * (1 - threshold). Must be
+         non-empty, the same length as config_displayWhiteBalanceBaseThresholds, and contain
+         non-negative numbers. -->
+     <array name="config_displayWhiteBalanceDecreaseThresholds">
+          <item>0.0078740</item>
+          <item>0.0075472</item>
+          <item>0.0069930</item>
+          <item>0.0067114</item>
+     </array>
+
+     <string-array name="config_displayWhiteBalanceDisplayNominalWhite">
+          <item>0.950456</item>
+          <item>1.000000</item>
+          <item>1.089058</item>
+     </string-array>
+
+     <string-array name="config_displayWhiteBalanceDisplayPrimaries">
+          <item>0.412315</item>
+          <item>0.212600</item>
+          <item>0.019327</item>
+          <item>0.357600</item>
+          <item>0.715200</item>
+          <item>0.119200</item>
+          <item>0.180500</item>
+          <item>0.072200</item>
+          <item>0.950633</item>
+          <item>0.950456</item>
+          <item>1.000000</item>
+          <item>1.089058</item>
+     </string-array>
+
+     <integer name="config_displayWhiteBalanceDisplayNominalWhiteCct">6500</integer>
+
+     <!-- Whether the system enables per-display focus. If the system has the input method for each
          display, this value should be true. -->
-    <bool name="config_perDisplayFocusEnabled">true</bool>
+     <bool name="config_perDisplayFocusEnabled">true</bool>
 
-    <!-- Limit of how long the device can remain unlocked due to attention checking.  -->
-    <integer name="config_attentionMaximumExtension">12000000</integer>
+     <!-- Limit of how long the device can remain unlocked due to attention checking.  -->
+     <integer name="config_attentionMaximumExtension">12000000</integer>
 
-    <!-- The amount to scale fullscreen snapshots for Overview and snapshot starting windows. -->
-    <item name="config_highResTaskSnapshotScale" format="float" type="dimen">0.7</item>
+     <!-- The amount to scale fullscreen snapshots for Overview and snapshot starting windows. -->
+     <item name="config_highResTaskSnapshotScale" format="float" type="dimen">0.7</item>
 
-    <!-- The bounding path of the cutout region of the main built-in display.
+     <!-- The bounding path of the cutout region of the main built-in display.
          Must either be empty if there is no cutout region, or a string that is parsable by
          {@link android.util.PathParser}.
 
@@ -531,30 +706,30 @@
          -->
     <string translatable="false" name="config_mainBuiltInDisplayCutout">M 1008,0 L 1008,126 L 1134,126 L 1134,0 Z</string>
 
-    <!-- Map of System DeviceState supplied by DeviceStateManager to WM Jetpack posture. Must be in
+     <!-- Map of System DeviceState supplied by DeviceStateManager to WM Jetpack posture. Must be in
          the format [System DeviceState]:[WM Jetpack Posture], for example: "0:1". -->
-    <string-array name="config_device_state_postures" translatable="false">
-        <item>0:1</item>    <!-- CLOSED                     : STATE_FLAT -->
-        <item>1:2</item>    <!-- HALF_OPENED                : STATE_HALF_OPENED -->
-        <item>2:3</item>    <!-- OPENED                     : STATE_FLIPPED -->
-        <item>3:1</item>    <!-- REAR_DISPLAY               : STATE_FLAT -->
-        <item>4:1000</item> <!-- CONCURRENT                 : COMMON_STATE_USE_BASE_STATE -->
-    </string-array>
+     <string-array name="config_device_state_postures" translatable="false">
+          <item>0:1</item>    <!-- CLOSED                     : STATE_FLAT -->
+          <item>1:2</item>    <!-- HALF_OPENED                : STATE_HALF_OPENED -->
+          <item>2:3</item>    <!-- OPENED                     : STATE_FLIPPED -->
+          <item>3:1</item>    <!-- REAR_DISPLAY               : STATE_FLAT -->
+          <item>4:1000</item> <!-- CONCURRENT                 : COMMON_STATE_USE_BASE_STATE -->
+     </string-array>
 
-    <!-- Map of DeviceState to rotation lock setting. Each entry must be in the format "key:value",
+     <!-- Map of DeviceState to rotation lock setting. Each entry must be in the format "key:value",
          or "key:value:fallback_key" for example: "0:1" or "2:0:1". The keys are device states, and
          the values are one of Settings.Secure.DeviceStateRotationLockSetting.
          The fallback is a key to a device state that can be specified when the value is
          Settings.Secure.DEVICE_STATE_ROTATION_LOCK_IGNORED.
      -->
-    <string-array name="config_perDeviceStateRotationLockDefaults" translatable="false">
-        <item>0:1</item> <!-- CLOSED -> LOCKED -->
-        <item>1:0:2</item> <!-- HALF_OPENED -> IGNORED and fallback to device state OPENED -->
-        <item>2:2</item> <!-- OPENED -> UNLOCKED -->
-        <item>3:0:0</item> <!-- REAR_DISPLAY -> IGNORED and fallback to device state CLOSED -->
-    </string-array>
+     <string-array name="config_perDeviceStateRotationLockDefaults" translatable="false">
+          <item>0:1</item> <!-- CLOSED -> LOCKED -->
+          <item>1:0:2</item> <!-- HALF_OPENED -> IGNORED and fallback to device state OPENED -->
+          <item>2:2</item> <!-- OPENED -> UNLOCKED -->
+          <item>3:0:0</item> <!-- REAR_DISPLAY -> IGNORED and fallback to device state CLOSED -->
+     </string-array>
 
-    <!-- The display cutout configs for secondary built-in display. -->
+     <!-- The display cutout configs for secondary built-in display. -->
     <string name="config_secondaryBuiltInDisplayCutout" translatable="false">M -37,0 L -37,126 L 37,126 L 37,0 Z</string>
 
     <!-- An array contains unique ids of all built-in displays and the unique id of a display can be
@@ -581,30 +756,30 @@
          Leave this array empty for single display device and the system will load the default main
          built-in related configs.
          -->
-    <string-array name="config_displayUniqueIdArray" translatable="false">
-        <item>local:4630946704981769859</item>
-        <item>local:4630946316123810436</item>
-    </string-array>
+     <string-array name="config_displayUniqueIdArray" translatable="false">
+          <item>local:4630946704981769859</item>
+          <item>local:4630946316123810436</item>
+     </string-array>
 
-    <!-- The display cutout path config for each display in a multi-display device. -->
-    <string-array name="config_displayCutoutPathArray" translatable="false">
-        <item>@string/config_mainBuiltInDisplayCutout</item>
-        <item>@string/config_secondaryBuiltInDisplayCutout</item>
-    </string-array>
+     <!-- The display cutout path config for each display in a multi-display device. -->
+     <string-array name="config_displayCutoutPathArray" translatable="false">
+          <item>@string/config_mainBuiltInDisplayCutout</item>
+          <item>@string/config_secondaryBuiltInDisplayCutout</item>
+     </string-array>
 
-    <!-- The display cutout approximation rect config for each display in a multi-display device.
+     <!-- The display cutout approximation rect config for each display in a multi-display device.
          -->
-    <string-array name="config_displayCutoutApproximationRectArray" translatable="false">
-        <item>@string/config_mainBuiltInDisplayCutout</item>
-        <item>@string/config_secondaryBuiltInDisplayCutout</item>
-    </string-array>
+     <string-array name="config_displayCutoutApproximationRectArray" translatable="false">
+          <item>@string/config_mainBuiltInDisplayCutout</item>
+          <item>@string/config_secondaryBuiltInDisplayCutout</item>
+     </string-array>
 
     <!-- Maximum number of active tasks on a given Desktop Windowing session. Set to 0 for unlimited. -->
-    <integer name="config_maxDesktopWindowingActiveTasks">0</integer>
+     <integer name="config_maxDesktopWindowingActiveTasks">0</integer>
 
-    <!-- Desktop mode is supported on the current device  -->
-    <bool name="config_isDesktopModeSupported">true</bool>
+     <!-- Desktop mode is supported on the current device  -->
+     <bool name="config_isDesktopModeSupported">true</bool>
 
-    <!-- True if the device supports system decorations on secondary displays. -->
-    <bool name="config_supportsSystemDecorsOnSecondaryDisplays">true</bool>
+     <!-- True if the device supports system decorations on secondary displays. -->
+     <bool name="config_supportsSystemDecorsOnSecondaryDisplays">true</bool>
 </resources>

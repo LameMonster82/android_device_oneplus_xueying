@@ -3,35 +3,28 @@
     <name>Outer Display</name>
 
     <autoBrightness enabled="true">
+        <brighteningLightDebounceMillis>2000</brighteningLightDebounceMillis>
+        <darkeningLightDebounceMillis>4000</darkeningLightDebounceMillis>
+        <brighteningLightDebounceIdleMillis>2000</brighteningLightDebounceIdleMillis>
+        <darkeningLightDebounceIdleMillis>1000</darkeningLightDebounceIdleMillis>
+        
+        <luxToBrightnessMapping>
+          <mode>default</mode>
+          <map>
+            <point><first>0</first>     <second>0.037</second></point>
+            <point><first>1</first>     <second>0.057</second></point>
+            <point><first>5</first>     <second>0.093</second></point>
+            <point><first>20</first>    <second>0.140</second></point>
+            <point><first>50</first>    <second>0.187</second></point>
+            <point><first>100</first>   <second>0.245</second></point>
+            <point><first>300</first>   <second>0.339</second></point>
+            <point><first>1000</first>  <second>0.465</second></point>
+            <point><first>5000</first>  <second>0.678</second></point>
+            <point><first>10000</first> <second>1.0</second></point>
+          </map>
+        </luxToBrightnessMapping>
+        <idleStylusTimeoutMillis>10000</idleStylusTimeoutMillis>
     </autoBrightness>
-
-    <screenBrightnessMap>
-        <!-- Ultra low (matches your 0–10 region) -->
-        <point><value>0.0</value><nits>0</nits></point>
-        <point><value>0.001</value><nits>1</nits></point>
-        <point><value>0.002</value><nits>1.5</nits></point>
-        <point><value>0.003</value><nits>2</nits></point>
-    
-        <!-- Low brightness (flattened region in your table) -->
-        <point><value>0.01</value><nits>3</nits></point>
-        <point><value>0.03</value><nits>6</nits></point>
-    
-        <!-- Indoor range -->
-        <point><value>0.08</value><nits>20</nits></point>
-        <point><value>0.15</value><nits>60</nits></point>
-        <point><value>0.3</value><nits>150</nits></point>
-    
-        <!-- Bright indoor / outdoor -->
-        <point><value>0.5</value><nits>350</nits></point>
-        <point><value>0.7</value><nits>700</nits></point>
-    
-        <!-- High brightness -->
-        <point><value>0.85</value><nits>1000</nits></point>
-        <point><value>0.95</value><nits>1250</nits></point>
-    
-        <!-- Peak -->
-        <point><value>1.0</value><nits>1400</nits></point>
-    </screenBrightnessMap>
 
     <quirks>
         <quirk>canSetBrightnessViaHwc</quirk>
@@ -44,4 +37,153 @@
             <density>420</density>
         </density>
     </densityMapping>
+
+    <screenBrightnessMap>
+        <point>
+            <value>0.000</value>
+            <nits>2.0000</nits>
+        </point>
+        <point>
+            <value>0.024709</value>
+            <nits>2.8702</nits>
+        </point>
+        <point>
+            <value>0.031155</value>
+            <nits>2.9084</nits>
+        </point>
+        <point>
+            <value>0.039750</value>
+            <nits>3.1010</nits>
+        </point>
+        <point>
+            <value>0.051861</value>
+            <nits>3.6425</nits>
+        </point>
+        <point>
+            <value>0.069733</value>
+            <nits>5.0148</nits>
+        </point>
+        <point>
+            <value>0.085360</value>
+            <nits>6.8366</nits>
+        </point>
+        <point>
+            <value>0.117101</value>
+            <nits>12.2996</nits>
+        </point>
+        <point>
+            <value>0.150405</value>
+            <nits>20.7523</nits>
+        </point>
+        <point>
+            <value>0.181951</value>
+            <nits>31.2007</nits>
+        </point>
+        <point>
+            <value>0.218674</value>
+            <nits>46.8328</nits>
+        </point>
+        <point>
+            <value>0.257349</value>
+            <nits>67.1059</nits>
+        </point>
+        <point>
+            <value>0.293290</value>
+            <nits>89.5870</nits>
+        </point>
+        <point>
+            <value>0.294560</value>
+            <nits>90.4051</nits>
+        </point>
+        <point>
+            <value>0.366735</value>
+            <nits>147.0060</nits>
+        </point>
+        <point>
+            <value>0.427678</value>
+            <nits>205.8080</nits>
+        </point>
+        <point>
+            <value>0.478367</value>
+            <nits>262.7860</nits>
+        </point>
+        <point>
+            <value>0.550737</value>
+            <nits>358.1320</nits>
+        </point>
+        <point>
+            <value>0.632191</value>
+            <nits>484.4660</nits>
+        </point>
+        <point>
+            <value>0.665592</value>
+            <nits>546.0600</nits>
+        </point>
+        <point>
+            <value>0.667155</value>
+            <nits>547.3610</nits>
+        </point>
+        <point>
+            <value>0.669987</value>
+            <nits>550.4030</nits>
+        </point>
+        <point>
+            <value>0.676824</value>
+            <nits>568.1410</nits>
+        </point>
+        <point>
+            <value>0.684930</value>
+            <nits>578.0750</nits>
+        </point>
+        <point>
+            <value>0.755445</value>
+            <nits>715.9210</nits>
+        </point>
+        <point>
+            <value>0.820979</value>
+            <nits>860.3040</nits>
+        </point>
+        <point>
+            <value>0.834359</value>
+            <nits>900.5680</nits>
+        </point>
+        <point>
+            <value>0.863073</value>
+            <nits>959.7790</nits>
+        </point>
+        <point>
+            <value>0.868054</value>
+            <nits>986.2320</nits>
+        </point>
+        <point>
+            <value>0.889735</value>
+            <nits>1029.3100</nits>
+        </point>
+        <point>
+            <value>0.921672</value>
+            <nits>1118.5200</nits>
+        </point>
+        <point>
+            <value>1.000000</value>
+            <nits>1406.1100</nits>
+        </point>
+    </screenBrightnessMap>
+
+    <highBrightnessMode enabled="true">
+        <transitionPoint>0.85</transitionPoint>
+		<minimumHdrPercentOfScreen>0.1</minimumHdrPercentOfScreen>
+		<minimumLux>4500</minimumLux>
+		<timing>
+            <timeWindowSecs>0</timeWindowSecs> // Window in which we restrict HBM. 
+            <timeMaxSecs>0</timeMaxSecs> // Maximum time of HBM allowed in that window. 
+            <timeMinSecs>0</timeMinSecs> // Minimum time remaining required to switch 
+        </timing> // HBM on for. 
+    </highBrightnessMode>
+
+    <screenBrightnessRampFastDecrease>0.06</screenBrightnessRampFastDecrease>
+    <screenBrightnessRampFastIncrease>0.06</screenBrightnessRampFastIncrease>
+    <screenBrightnessRampSlowDecrease>0.04</screenBrightnessRampSlowDecrease>
+    <screenBrightnessRampSlowIncrease>0.04</screenBrightnessRampSlowIncrease>
+    <screenBrightnessRampIncreaseMaxMillis>1000</screenBrightnessRampIncreaseMaxMillis>
+    <screenBrightnessRampDecreaseMaxMillis>1000</screenBrightnessRampDecreaseMaxMillis>
 </displayConfiguration>
